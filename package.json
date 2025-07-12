@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migration:create:dev": "cross-env NODE_ENV=development sequelize-cli migration:generate",
+    "migrate:dev": "cross-env NODE_ENV=development sequelize-cli db:migrate",
+    "undo:dev": "cross-env NODE_ENV=development sequelize-cli db:migrate:undo",
+    "undo:all:dev": "cross-env NODE_ENV=development sequelize-cli db:migrate:undo:all"
   },
   "dependencies": {
     "@auth/sequelize-adapter": "^2.10.0",
@@ -29,6 +33,7 @@
     "@types/node": "^20.19.7",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
     "sequelize-cli": "^6.6.3",

@@ -20,12 +20,14 @@ module.exports = {
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
-        field: 'created_at'
+        field: 'created_at',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'), // ✅
       },
       updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
-        field: 'updated_at'
+        field: 'updated_at',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), // ✅ Best for MySQL
       }
     });
 

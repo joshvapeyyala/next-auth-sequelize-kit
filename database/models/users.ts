@@ -26,7 +26,7 @@ User.init(
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       unique: true,
     },
     emailVerified: {
@@ -35,7 +35,7 @@ User.init(
       field: "email_verified",
     },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     password: {

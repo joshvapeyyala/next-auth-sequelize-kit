@@ -16,7 +16,7 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true
       },
       emailVerified: {
@@ -25,7 +25,7 @@ module.exports = {
         field: 'email_verified'
       },
       image: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: true
       },
       password: {

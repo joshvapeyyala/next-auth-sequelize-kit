@@ -3,6 +3,7 @@ import SequelizeAdapter from "@auth/sequelize-adapter";
 import sequelize from "../../database/config/db_connection"; 
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
+// import InstagramProvider from "next-auth/providers/instagram";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -14,6 +15,10 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.FACEBOOK_CLIENT_ID!,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
     }),
+    // InstagramProvider({
+    //   clientId: process.env.FACEBOOK_CLIENT_ID!,
+    //   clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
+    // }),
   ],
   adapter: SequelizeAdapter(sequelize),
   session: {
